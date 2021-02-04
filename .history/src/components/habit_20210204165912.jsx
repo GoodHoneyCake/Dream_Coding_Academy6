@@ -1,16 +1,6 @@
 import React, { Component } from "react";
 
 class Habit extends Component {
-  handleIncrement = () => {
-    this.props.onIncrement(this.props.habit);
-  };
-  handleDecrement = () => {
-    this.props.onDecrement(this.props.habit);
-  };
-  handleDelete = () => {
-    this.props.onDelete(this.props.habit);
-  };
-
   render() {
     const { name, count } = this.props.habit;
     return (
@@ -29,10 +19,7 @@ class Habit extends Component {
         >
           <i className="fas fa-minus-square"></i>
         </button>
-        <button
-          className="habit-button habit-delete"
-          onClick={this.handleDelete}
-        >
+        <button className="habit-button habit-delete">
           <i className="fas fa-trash"></i>
         </button>
       </li>
