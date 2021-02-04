@@ -3,7 +3,7 @@ import "./app.css";
 import Habit from "./components/habit";
 
 function App() {
-  return <Habit />;
+  return <Habit></Habit>;
 }
 
 export default App;

@@ -1,9 +1,8 @@
 import React from "react";
 import "./app.css";
-import Habit from "./components/habit";
 
 function App() {
-  return <Habit />;
+  return <h1>Hi</h1>;
 }
 
 export default App;
