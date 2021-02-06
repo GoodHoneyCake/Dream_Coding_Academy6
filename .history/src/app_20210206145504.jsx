@@ -43,11 +43,11 @@ class App extends Component {
     this.setState({ habits });
   };
   handleReset = () => {
-    const habits = this.state.habits.map((habit) => {
+    const habits = this.state.habits.map((item) => {
       if (habit.count !== 0) {
         return { ...habit, count: 0 };
       }
-      return habit;
+      return item;
     });
     this.setState({ habits });
   };

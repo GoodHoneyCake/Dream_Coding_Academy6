@@ -19,17 +19,14 @@ class App extends Component {
       }
       return item;
     });
-    this.setState({ habits });
+    this.setState({ habit });
   };
   handleDecrement = (habit) => {
-    const habits = this.state.habits.map((item) => {
-      if (item.id === habit.id) {
-        const count = habit.count - 1;
-        return { ...habit, count: count < 0 ? 0 : count };
-      }
-      return item;
-    });
-    this.setState({ habits });
+    const habits = [...this.state.habits];
+    const index = habits.indexOf(habit);
+    const count = habits[index].count - 1;
+    habits[index].count = count < 0 ? 0 : count;
+    this.setState({ habit });
   };
   handleDelete = (habit) => {
     const habits = this.state.habits.filter((item) => item.id !== habit.id);
@@ -44,9 +41,7 @@ class App extends Component {
   };
   handleReset = () => {
     const habits = this.state.habits.map((habit) => {
-      if (habit.count !== 0) {
-        return { ...habit, count: 0 };
-      }
+      habit.count = 0;
       return habit;
     });
     this.setState({ habits });

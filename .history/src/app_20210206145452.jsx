@@ -47,7 +47,6 @@ class App extends Component {
       if (habit.count !== 0) {
         return { ...habit, count: 0 };
       }
-      return habit;
     });
     this.setState({ habits });
   };
