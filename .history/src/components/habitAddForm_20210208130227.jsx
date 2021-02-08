@@ -1,13 +1,14 @@
-import React, { memo } from "react";
+import React from "react";
 
-const HabitAddForm = memo((props) => {
+const HabitAddForm = (props) => {
   const formRef = React.createRef();
   const inputRef = React.createRef();
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const name = inputRef.current.value;
+    const name = this.inputRef.current.value;
     name && props.onAdd(name);
+
     formRef.current.reset();
   };
 
@@ -22,5 +23,5 @@ const HabitAddForm = memo((props) => {
       <button className="add-button">Add</button>
     </form>
   );
-});
+};
 export default HabitAddForm;
