@@ -1,14 +1,12 @@
 import userEvent from "@testing-library/user-event";
 import React, { useEffect, useState } from "react";
 import "./app.css";
-import VideoList from "./components/video_list/video_list";
 
 function App() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     console.log("useEffect");
-
     const requestOptions = {
       method: "GET",
       redirect: "follow",
@@ -22,7 +20,7 @@ function App() {
       .then((result) => setVideos(result.items))
       .catch((error) => console.log("error", error));
   }, []);
-  return <VideoList videos={videos} />;
+  return <h1>Hi</h1>;
 }
 
 export default App;

@@ -1,14 +1,12 @@
 import userEvent from "@testing-library/user-event";
 import React, { useEffect, useState } from "react";
 import "./app.css";
-import VideoList from "./components/video_list/video_list";
 
 function App() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
     console.log("useEffect");
-
     const requestOptions = {
       method: "GET",
       redirect: "follow",
@@ -18,11 +16,11 @@ function App() {
       "https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=25&key=AIzaSyDlRY8MTesdvHw_lMP8v4G_NKGaLAm8UBU",
       requestOptions
     )
-      .then((response) => response.json())
-      .then((result) => setVideos(result.items))
+      .then((response) => response.text())
+      .then((result) => console.log(result))
       .catch((error) => console.log("error", error));
   }, []);
-  return <VideoList videos={videos} />;
+  return <h1>Hi</h1>;
 }
 
 export default App;
