@@ -9,13 +9,11 @@ function App({ youtube }) {
   const search = (query) => {
     youtube
       .search(query) //
-      .then((videos) => setVideos(videos));
+      .then(console.log);
   };
 
   useEffect(() => {
-    youtube
-      .mostPopular() //
-      .then((videos) => setVideos(videos));
+    youtube.mostPopular().then(console.log);
   }, []);
   return (
     <div className={styles.app}>

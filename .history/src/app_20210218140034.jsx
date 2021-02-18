@@ -7,16 +7,10 @@ function App({ youtube }) {
   const [videos, setVideos] = useState([]);
 
   const search = (query) => {
-    youtube
-      .search(query) //
-      .then((videos) => setVideos(videos));
+    youtube.search(query).then(console.log);
   };
 
-  useEffect(() => {
-    youtube
-      .mostPopular() //
-      .then((videos) => setVideos(videos));
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className={styles.app}>
       <SearchHeader onSearch={search} />

@@ -3,20 +3,12 @@ import styles from "./app.module.css";
 import SearchHeader from "./components/search_header/search_header";
 import VideoList from "./components/video_list/video_list";
 
-function App({ youtube }) {
+function App() {
   const [videos, setVideos] = useState([]);
 
-  const search = (query) => {
-    youtube
-      .search(query) //
-      .then((videos) => setVideos(videos));
-  };
+  const search = (query) => {};
 
-  useEffect(() => {
-    youtube
-      .mostPopular() //
-      .then((videos) => setVideos(videos));
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className={styles.app}>
       <SearchHeader onSearch={search} />
