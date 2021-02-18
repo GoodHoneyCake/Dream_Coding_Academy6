@@ -1,0 +1,29 @@
+import React from "react";
+import styles from "./video_detail.module.css";
+
+const VideoDetail = ({ video }) => {
+  return (
+    <section className={styles.detail}>
+      <iframe
+        className={styles.video}
+        type="text/html"
+        width="100%"
+        height="500px"
+        src={`https://www.youtube.com/embed/${video.id}`}
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+      <h2 width="100%" height="500px">
+        {video.snippet.title}
+      </h2>
+      <h3 width="100%" height="500px">
+        {video.snippet.channelTitle}
+      </h3>
+      <pre width="100%" height="500px">
+        {video.snippet.description}
+      </pre>
+    </section>
+  );
+};
+
+export default VideoDetail;

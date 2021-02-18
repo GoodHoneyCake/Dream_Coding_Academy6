@@ -15,10 +15,7 @@ function App({ youtube }) {
   const search = (query) => {
     youtube
       .search(query) //
-      .then((videos) => {
-        setVideos(videos);
-        setSelectedVideo(null);
-      });
+      .then((videos) => setVideos(videos));
   };
 
   useEffect(() => {
@@ -36,11 +33,7 @@ function App({ youtube }) {
           </div>
         )}
         <div className={styles.list}>
-          <VideoList
-            videos={videos}
-            onVideoClick={selectVideo}
-            display={selectedVideo ? "list" : "grid"}
-          />
+          <VideoList videos={videos} onVideoClick={selectVideo} />
         </div>
       </section>
     </div>
