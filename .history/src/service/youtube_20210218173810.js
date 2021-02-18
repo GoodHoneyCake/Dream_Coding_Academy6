@@ -1,6 +1,8 @@
+import axios from "axios";
+
 export default class Youtube {
   constructor(httpClient) {
-    this.youtube = httpClient;
+    this.httpClient;
   }
   async mostPopular() {
     const response = await this.youtube.get("videos", {

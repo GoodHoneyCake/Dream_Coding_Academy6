@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app";
 import Youtube from "./service/youtube";
-import axios from "axios";
 
 const httpClient = axios.create({
   baseURL: `https://youtube.googleapis.com/youtube/v3`,

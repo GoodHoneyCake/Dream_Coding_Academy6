@@ -38,6 +38,6 @@ const SearchHeader = memo(({ onSearch }) => {
       </button>
     </header>
   );
-});
+};)
 
 export default SearchHeader;

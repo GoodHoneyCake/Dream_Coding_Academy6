@@ -1,6 +1,11 @@
+import axios from "axios";
+
 export default class Youtube {
-  constructor(httpClient) {
-    this.youtube = httpClient;
+  constructor(key) {
+    this.youtube = axios.create({
+      baseURL: `https://youtube.googleapis.com/youtube/v3`,
+      params: { key: key },
+    });
   }
   async mostPopular() {
     const response = await this.youtube.get("videos", {
